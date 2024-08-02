@@ -9,9 +9,8 @@
 
 #### Resultado final
 
-![](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/envitar-reenvio-de-formulario-con-react.png)
+![](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/Loading-Request-formulario.gif)
 
-![](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/envitar-reenvio-de-formulario-con-reactjs.png)
 
 ### Expresiones de Gratitud 🎁
 

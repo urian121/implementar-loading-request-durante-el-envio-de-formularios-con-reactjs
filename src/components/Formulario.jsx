@@ -3,13 +3,27 @@ import { useForm } from 'react-hook-form';
 import Titulo from "./Titulo";
 import GridIzquierdo from "./GridIzquierdo";
 
+import { showLoading, hideLoading } from "loading-request";
+import "loading-request/dist/index.css";
+
 function Formulario() {
   const [data, setData] = useState({});
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = (dataForm) => {
-    console.log(dataForm);
-    setData(dataForm)
+    showLoading({
+      message: "Enviando Formulario...",
+      spinnerColor: "#7366ff",
+      textLoadingColor: "#7366ff",
+      textLoadingSize: "20px",
+    });
+
+    //console.log(dataForm);
+    setData(dataForm) //Actualizando la data
+    // Validar si dataForm tiene datos y ocultar el indicador de carga
+    if (data) {
+      hideLoading({ timeLoading: 1000 });
+    }
   };
 
   return (
@@ -42,6 +56,7 @@ function Formulario() {
               className="form-control"
               id="telefono"
               name="telefono"
+              {...register('telefono')}
             />
             {errors.telefono && <span className="text-danger">Este campo es requerido</span>}
           </div>
@@ -56,6 +71,7 @@ function Formulario() {
                 name="sexo"
                 id="sexoMasculino"
                 value="masculino"
+                {...register('sexo')}
               />
               <label className="form-check-label" htmlFor="sexoMasculino">
                 Masculino
@@ -68,6 +84,7 @@ function Formulario() {
                 name="sexo"
                 id="sexoFemenino"
                 value="femenino"
+                {...register('sexo')}
               />
               <label className="form-check-label" htmlFor="sexoFemenino">
                 Femenino
