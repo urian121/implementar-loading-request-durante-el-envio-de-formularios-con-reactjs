@@ -4,7 +4,6 @@ import Titulo from "./Titulo";
 import GridIzquierdo from "./GridIzquierdo";
 
 import { showLoading, hideLoading } from "loading-request";
-import "loading-request/dist/index.css";
 
 function Formulario() {
   const [data, setData] = useState({});
